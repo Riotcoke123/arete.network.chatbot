@@ -3,44 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        code {
-            background: #f4f4f4;
-            padding: 2px 5px;
-            border-radius: 4px;
-        }
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 8px;
-            overflow: auto;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -85,8 +47,10 @@ driver = webdriver.Chrome()
 try:
     # Set an implicit wait
     driver.implicitly_wait(10)  # Wait up to 10 seconds when trying to find elements
+    
     # Go to the chat room page
     driver.get("https://arete.network/chat/IP2/")
+    
     # Click on the user dropdown to log in
     user_dropdown = driver.find_element(By.CSS_SELECTOR, "#userDropdown > span.user")
     user_dropdown.click()
@@ -100,31 +64,23 @@ try:
     submit_button = driver.find_element(By.CSS_SELECTOR, "#loginPrompt > form > div:nth-child(4) > input[type=submit]")
     submit_button.click()
     # Go back to the chat room page after login
-    driver.get("https://arete.network/chat/IP2/")
-    
-    # Find theinput box and send keys
+    driver.get("https://arete.network/chat/IP2/")  
+    # Find the input box and send keys
     input_box = driver.find_element(By.CSS_SELECTOR, '#input-box')
-    
     # Infinite loop to continuously post messages
     while True:
         input_box.click()  # Click to focus
         input_box.send_keys(comment)
-        
         # Send the message using the specific CSS Selector
         send_button = driver.find_element(By.CSS_SELECTOR, '#chat-input-inner > div:nth-child(3)')
         send_button.click()
-        
         # Optional: Add a delay between posts
         time.sleep(5)  # Adjust as needed to control the posting rate
-
 except Exception as e:
     print(f"An error occurred: {str(e)}")
-
 # No driver.quit() here, so the WebDriver window will remain open</code></pre>
-
         <h2>Contributing</h2>
         <p>Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.</p>
-
         <h2>License</h2>
         <p>This project is licensed under the GPL-3.0 License - see the <a href="LICENSE" target="_blank">LICENSE</a> file for details.</p>
     </div>
