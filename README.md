@@ -25,7 +25,7 @@
         <p>Download the WebDriver for your browser and ensure it is in your system's PATH.</p>
         <h2>Usage</h2>
         <p>Update the script with your login credentials and comment text:</p>
-        
+    
         <pre><code>username = "your_username"
     password = "your_password"
     comment = "This is an automated comment."</code></pre>
@@ -48,10 +48,8 @@ driver = webdriver.Chrome()
 try:
     # Set an implicit wait
     driver.implicitly_wait(10)  # Wait up to 10 seconds when trying to find elements
-    
     # Go to the chat room page
     driver.get("https://arete.network/chat/IP2/")
-    
     # Click on the user dropdown to log in
     user_dropdown = driver.find_element(By.CSS_SELECTOR, "#userDropdown > span.user")
     user_dropdown.click()
@@ -79,7 +77,8 @@ try:
         time.sleep(5)  # Adjust as needed to control the posting rate
 except Exception as e:
     print(f"An error occurred: {str(e)}")
-# No driver.quit() here, so the WebDriver window will remain open</code></pre>
+# No driver.quit() here, so the WebDriver window will remain open</code>
+</pre>
         <h2>Contributing</h2>
         <p>Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.</p>
         <h2>License</h2>
