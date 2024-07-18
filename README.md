@@ -25,16 +25,17 @@
         <p>Download the WebDriver for your browser and ensure it is in your system's PATH.</p>
         <h2>Usage</h2>
         <p>Update the script with your login credentials and comment text:</p>
+        
         <pre><code>username = "your_username"
-password = "your_password"
-comment = "This is an automated comment."</code></pre>
+    password = "your_password"
+    comment = "This is an automated comment."</code></pre>
         <p>Run the script:</p>
         <pre><code>python path_to_your_script.py</code></pre>
         <h2>Script</h2>
         <pre><code>from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import time
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    import time
 
 # Replace these with your actual login credentials
 username = "your_username"
